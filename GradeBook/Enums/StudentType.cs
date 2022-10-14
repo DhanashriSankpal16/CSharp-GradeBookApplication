@@ -4,6 +4,6 @@
     {
         Standard,
         Honors,
-        DualEnrolled
+        DualEnrolled 
     }
 }
