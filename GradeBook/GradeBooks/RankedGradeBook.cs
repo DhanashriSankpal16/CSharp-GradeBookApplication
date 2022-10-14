@@ -6,7 +6,7 @@ using System.Text;
 
 namespace GradeBook.GradeBooks
 {
-   public class RankedGradeBook : BaseGradeBook
+    public class RankedGradeBook : BaseGradeBook
 
     {
         public RankedGradeBook(string name) : base(name)
@@ -31,8 +31,29 @@ namespace GradeBook.GradeBooks
             else if (grades[(threshold * 4) - 1] <= averageGrade)
                 return 'D';
             else
-         
-            return 'F';
+
+                return 'F';
+        }
+        public override void CalculateStatistics()
+        {
+            if (Students.Count < 5)
+            {
+                Console.WriteLine("Ranked grading requires at least 5 students with grades in order to properly calculate a student's overall grade.");
+                return;
+            }
+            base.CalculateStatistics();
+
+        }
+        public override void CalculateStudentStatistics(string name)
+
+        {
+            if (Students.Count < 5)
+            {
+                Console.WriteLine("Ranked grading requires at least 5 students with grades in order to properly calculate a student's overall grade.");
+                return;
+            }
+
+            base.CalculateStudentStatistics(name);
         }
     }
 }
