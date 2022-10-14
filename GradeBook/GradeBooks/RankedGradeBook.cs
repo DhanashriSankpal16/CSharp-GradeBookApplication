@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GradeBook.Enums;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -9,10 +10,9 @@ namespace GradeBook.GradeBooks
     {
         public RankedGradeBook(string name) : base(name)
         {
-            Type = RankedGradeBook.Ranked;
+            Type = GradeBookType.Ranked;
         }
 
-        public static object Ranked { get; }
-        public object Type { get; }
+      
     }
 }
